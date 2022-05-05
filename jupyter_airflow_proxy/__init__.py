@@ -33,8 +33,9 @@ def setup_airflow():
 
     def _get_cmd(port):
         cmd = [
-            get_airflow_executable('airflow'),
-            'webserver',
+            get_airflow_executable('supervisord'),
+            '-c',
+            '/etc/supervisord.conf',
         ]
 
         return cmd
