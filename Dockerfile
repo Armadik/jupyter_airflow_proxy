@@ -19,9 +19,13 @@ RUN apt-get update --yes && \
 
 RUN cd /usr/local && mkdir airflow && chmod +x airflow && cd airflow
 RUN ls /usr/local/
-RUN useradd -ms /bin/bash airflow
-RUN usermod -a -G sudo airflow
-RUN chmod 666 -R /usr/local/airflow
+RUN chmod 777 -R /usr/local/airflow
+
+ARG AIRFLOW_USER_HOME=/usr/local/airflow
+ENV AIRFLOW_HOME=${AIRFLOW_USER_HOME}
+ENV AIRFLOW__WEBSERVER__RBAC="False"
+COPY config/webserver_config.py ${AIRFLOW_USER_HOME}/webserver_config.py
+COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 
 USER ${NB_UID}
 

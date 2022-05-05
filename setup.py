@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="jupyter-airflow-proxy",
-    version='0.0.1',
+    version='0.0.2',
     url="xyurl",
     author="Armadik",
     description="Jupyter extension to proxy Airflow",
