@@ -6,7 +6,6 @@ jupyter_airflow_proxy provides Jupyter server and notebook extensions to proxy A
 
 ## Setting build
 
-Requirements:
 Build
 
 ```bash
@@ -24,17 +23,16 @@ Install the library via `pip`:
 pip install jupyter_airflow_proxy-0.0.1-py3-none-any.whl
 
 ```
-### Create user
+### User default airflow
 
 ```bash
-airflow users create \
-      --username Admin \
-      --firstname FIRST_NAME \
-      --lastname LAST_NAME \
-      --role Admin \
-      --email admin@example.org
+Admin/admin
 ```
 
+### Sample dags
+![img_1.png](img_1.png)
+
+![img_2.png](img_2.png)
 ## License
 
 MIT © Richard McRichface

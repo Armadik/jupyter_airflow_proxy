@@ -18,7 +18,7 @@
 """Default configuration for the Airflow webserver"""
 import os
 
-from airflow.www.fab_security.manager import AUTH_DB
+#from airflow.www.fab_security.manager import AUTH_DB
 
 # from airflow.www.fab_security.manager import AUTH_LDAP
 # from airflow.www.fab_security.manager import AUTH_OAUTH
@@ -29,7 +29,7 @@ from airflow.www.fab_security.manager import AUTH_DB
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Flask-WTF flag for CSRF
-WTF_CSRF_ENABLED = True
+#WTF_CSRF_ENABLED = True
 
 # ----------------------------------------------------
 # AUTHENTICATION CONFIG
@@ -44,7 +44,7 @@ WTF_CSRF_ENABLED = True
 # AUTH_LDAP : Is for LDAP
 # AUTH_REMOTE_USER : Is for using REMOTE_USER from web server
 # AUTH_OAUTH : Is for OAuth
-AUTH_TYPE = AUTH_DB
+#AUTH_TYPE = AUTH_DB
 
 # Uncomment to setup Full admin role name
 AUTH_ROLE_ADMIN = 'Admin'
