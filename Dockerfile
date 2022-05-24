@@ -34,8 +34,6 @@ ENV AIRFLOW_DAGS_DIR="${HOME}/dags"
 ENV AIRFLOW__CORE__DAGS_FOLDER="${HOME}/dags"
 ENV AIRFLOW__WEBSERVER__WORKERS=1
 
-COPY config/webserver_config.py ${AIRFLOW_USER_HOME}/webserver_config.py
-COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 
 ARG A_USERNAME=Admin
 ARG A_PASSWORD=admin
@@ -47,4 +45,7 @@ RUN pip install /tmp/*.whl
 RUN airflow users create --username ${A_USERNAME}  --firstname FIRST_NAME  --lastname LAST_NAME  --role Admin  --email admin@example.org --password ${A_PASSWORD}
 
 RUN airflow db init
+
+COPY config/webserver_config.py ${AIRFLOW_USER_HOME}/webserver_config.py
+COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 
